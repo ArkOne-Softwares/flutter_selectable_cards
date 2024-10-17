@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: SelectableCards(
               isMultipleSelection: true,
-              layout: const LayoutWrap(),
+              layout: const LayoutWrap(crossAxisAlignment: WrapCrossAlignment.center),
               children: const [
                 SimpleCard(
                   index: 0,

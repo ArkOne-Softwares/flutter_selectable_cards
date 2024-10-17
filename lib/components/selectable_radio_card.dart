@@ -1,7 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'index_inherit_selected.dart';
+import 'package:flutter_selectable_cards/index_inherit_selected.dart';
 
 class RadioCard extends StatelessWidget {
   final String title;
