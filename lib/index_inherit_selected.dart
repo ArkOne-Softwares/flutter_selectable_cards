@@ -15,11 +15,13 @@ class SelectedIndexInheritedWidget extends InheritedWidget {
   }) : super(child: child);
 
   static SelectedIndexInheritedWidget? of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<SelectedIndexInheritedWidget>();
+    return context
+        .dependOnInheritedWidgetOfExactType<SelectedIndexInheritedWidget>();
   }
 
   @override
   bool updateShouldNotify(SelectedIndexInheritedWidget oldWidget) {
-    return oldWidget.selectedIndex != selectedIndex || oldWidget.numberOfSelectedIndices != numberOfSelectedIndices;
+    return oldWidget.selectedIndex != selectedIndex ||
+        oldWidget.numberOfSelectedIndices != numberOfSelectedIndices;
   }
 }

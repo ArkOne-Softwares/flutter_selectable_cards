@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_selectable_cards/index_inherit_selected.dart';
 
@@ -18,7 +17,10 @@ class SimpleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool selected = SelectedIndexInheritedWidget.of(context)?.selectedIndex.contains(index) ?? false;
+    final bool selected = SelectedIndexInheritedWidget.of(context)
+            ?.selectedIndex
+            .contains(index) ??
+        false;
 
     return Container(
       margin: const EdgeInsets.all(8.0),

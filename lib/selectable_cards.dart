@@ -45,12 +45,14 @@ class _SelectableCardsState extends State<SelectableCards> {
         _selectedIndices = [index];
       }
     });
-    widget.onSelected(widget.isMultipleSelection ? _selectedIndices : _selectedIndices.first);
+    widget.onSelected(
+        widget.isMultipleSelection ? _selectedIndices : _selectedIndices.first);
   }
 
   @override
   Widget build(BuildContext context) {
-    final updatedChildren = List<Widget>.generate(widget.children.length, (int index) {
+    final updatedChildren =
+        List<Widget>.generate(widget.children.length, (int index) {
       return GestureDetector(
         onTap: () => _onCardTap(index),
         child: widget.children[index],
@@ -65,7 +67,8 @@ class _SelectableCardsState extends State<SelectableCards> {
             spacing: (widget.layout as LayoutWrap).spacing,
             runAlignment: (widget.layout as LayoutWrap).runAlignment,
             runSpacing: (widget.layout as LayoutWrap).runSpacing,
-            crossAxisAlignment: (widget.layout as LayoutWrap).crossAxisAlignment,
+            crossAxisAlignment:
+                (widget.layout as LayoutWrap).crossAxisAlignment,
             textDirection: (widget.layout as LayoutWrap).textDirection,
             verticalDirection: (widget.layout as LayoutWrap).verticalDirection,
             children: updatedChildren,
@@ -73,21 +76,27 @@ class _SelectableCardsState extends State<SelectableCards> {
         : widget.layout is LayoutRow
             ? Row(
                 key: widget.layout.key,
-                mainAxisAlignment: (widget.layout as LayoutRow).mainAxisAlignment,
+                mainAxisAlignment:
+                    (widget.layout as LayoutRow).mainAxisAlignment,
                 mainAxisSize: (widget.layout as LayoutRow).mainAxisSize,
-                crossAxisAlignment: (widget.layout as LayoutRow).crossAxisAlignment,
+                crossAxisAlignment:
+                    (widget.layout as LayoutRow).crossAxisAlignment,
                 textDirection: (widget.layout as LayoutRow).textDirection,
-                verticalDirection: (widget.layout as LayoutRow).verticalDirection,
+                verticalDirection:
+                    (widget.layout as LayoutRow).verticalDirection,
                 textBaseline: (widget.layout as LayoutRow).textBaseline,
                 children: updatedChildren,
               )
             : Column(
                 key: widget.layout.key,
-                mainAxisAlignment: (widget.layout as LayoutColumn).mainAxisAlignment,
+                mainAxisAlignment:
+                    (widget.layout as LayoutColumn).mainAxisAlignment,
                 mainAxisSize: (widget.layout as LayoutColumn).mainAxisSize,
-                crossAxisAlignment: (widget.layout as LayoutColumn).crossAxisAlignment,
+                crossAxisAlignment:
+                    (widget.layout as LayoutColumn).crossAxisAlignment,
                 textDirection: (widget.layout as LayoutColumn).textDirection,
-                verticalDirection: (widget.layout as LayoutColumn).verticalDirection,
+                verticalDirection:
+                    (widget.layout as LayoutColumn).verticalDirection,
                 textBaseline: (widget.layout as LayoutColumn).textBaseline,
                 children: updatedChildren,
               );

@@ -7,7 +7,11 @@ class CardWithImage extends StatelessWidget {
   final int index;
 
   const CardWithImage(
-      {required this.text, required this.imageUrl, required this.subtitle, super.key, required this.index});
+      {required this.text,
+      required this.imageUrl,
+      this.subtitle = "",
+      super.key,
+      required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,11 @@ class CardWithImage extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(6),
         boxShadow: [
-          BoxShadow(offset: const Offset(10, 20), blurRadius: 10, spreadRadius: 0, color: Colors.grey.withOpacity(.05)),
+          BoxShadow(
+              offset: const Offset(10, 20),
+              blurRadius: 10,
+              spreadRadius: 0,
+              color: Colors.grey.withOpacity(.05)),
         ],
       ),
       child: Row(
@@ -35,12 +43,16 @@ class CardWithImage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               )),
-          const Spacer(),
-          Text(
-            subtitle,
-            textAlign: TextAlign.center,
-            style: const TextStyle(color: Colors.grey, fontWeight: FontWeight.normal, fontSize: 12),
-          ),
+          if (subtitle.isNotEmpty) const Spacer(),
+          if (subtitle.isNotEmpty)
+            Text(
+              subtitle,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 12),
+            ),
         ],
       ),
     );

@@ -1,5 +1,1 @@
-enum SelectableCardType {
-  column,
-  row,
-  wrap,
-}
+enum SelectableCardType { column, row, wrap }

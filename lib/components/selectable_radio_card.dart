@@ -9,13 +9,16 @@ class RadioCard extends StatelessWidget {
   const RadioCard({
     super.key,
     required this.title,
-    required this.subtitle,
+    this.subtitle = "",
     required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
-    final bool selected = SelectedIndexInheritedWidget.of(context)?.selectedIndex.contains(index) ?? false;
+    final bool selected = SelectedIndexInheritedWidget.of(context)
+            ?.selectedIndex
+            .contains(index) ??
+        false;
 
     // Use the selectedIndex as needed in your widget
     return Container(
@@ -45,14 +48,15 @@ class RadioCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 4.0),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.grey[600],
+                if (subtitle.isNotEmpty) const SizedBox(height: 4.0),
+                if (subtitle.isNotEmpty)
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.grey[600],
+                    ),
                   ),
-                ),
               ],
             ),
           ),

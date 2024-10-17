@@ -8,7 +8,8 @@ abstract class FlutterSelectableCardsPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static FlutterSelectableCardsPlatform _instance = MethodChannelFlutterSelectableCards();
+  static FlutterSelectableCardsPlatform _instance =
+      MethodChannelFlutterSelectableCards();
 
   /// The default instance of [FlutterSelectableCardsPlatform] to use.
   ///
