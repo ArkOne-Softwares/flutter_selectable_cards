@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_selectable_cards/index_inherit_selected.dart';
@@ -25,7 +24,7 @@ class SimpleCard extends StatelessWidget {
       margin: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         border: Border.all(
-          color: selected != null && selected ? selectedBorderColor : borderColor,
+          color: selected ? selectedBorderColor : borderColor,
         ),
         borderRadius: BorderRadius.circular(8.0),
       ),

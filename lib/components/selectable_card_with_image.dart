@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_selectable_cards/index_inherit_selected.dart';
 
 class CardWithImage extends StatelessWidget {
   final String text;
@@ -12,9 +11,6 @@ class CardWithImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final selected = SelectedIndexInheritedWidget.of(context)?.selectedIndex != null &&
-        SelectedIndexInheritedWidget.of(context)!.selectedIndex == index;
-
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 75,
