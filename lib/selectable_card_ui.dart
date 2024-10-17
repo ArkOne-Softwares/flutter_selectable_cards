@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'index_inherit_selected.dart';
 
 class RadioCard extends StatelessWidget {
@@ -16,8 +17,8 @@ class RadioCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final selected = SelectedIndexInheritedWidget.of(context)?.selectedIndex != null &&
-        SelectedIndexInheritedWidget.of(context)!.selectedIndex == index;
+    final bool selected = SelectedIndexInheritedWidget.of(context)?.selectedIndex.contains(index) ?? false;
+
     // Use the selectedIndex as needed in your widget
     return Container(
       margin: const EdgeInsets.all(8.0),

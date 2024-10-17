@@ -4,17 +4,17 @@ import 'index_inherit_selected.dart';
 
 class SelectableCards extends StatefulWidget {
   final List<Widget> children;
-  final ValueChanged<int> onSelected;
-  final Color borderColor;
-  final Color selectedBorderColor;
+  final ValueChanged<dynamic> onSelected;
   final Layout layout;
+  final int? defaultSelectedIndex;
+  final bool isMultipleSelection;
 
   const SelectableCards({
     super.key,
     required this.children,
     required this.onSelected,
-    this.borderColor = Colors.grey,
-    this.selectedBorderColor = Colors.blue,
+    this.defaultSelectedIndex,
+    this.isMultipleSelection = false,
     this.layout = const LayoutWrap(),
   });
 
@@ -23,13 +23,29 @@ class SelectableCards extends StatefulWidget {
 }
 
 class _SelectableCardsState extends State<SelectableCards> {
-  int? _selectedIndex;
+  List<int> _selectedIndices = [];
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.defaultSelectedIndex != null) {
+      _selectedIndices = [widget.defaultSelectedIndex!];
+    }
+  }
 
   void _onCardTap(int index) {
     setState(() {
-      _selectedIndex = index;
+      if (widget.isMultipleSelection) {
+        if (_selectedIndices.contains(index)) {
+          _selectedIndices.remove(index);
+        } else {
+          _selectedIndices.add(index);
+        }
+      } else {
+        _selectedIndices = [index];
+      }
     });
-    widget.onSelected(index);
+    widget.onSelected(widget.isMultipleSelection ? _selectedIndices : _selectedIndices.first);
   }
 
   @override
@@ -77,7 +93,8 @@ class _SelectableCardsState extends State<SelectableCards> {
               );
 
     return SelectedIndexInheritedWidget(
-      selectedIndex: _selectedIndex,
+      selectedIndex: _selectedIndices,
+      numberOfSelectedIndices: _selectedIndices.length,
       child: updatedLayout,
     );
   }

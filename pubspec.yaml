@@ -1,7 +1,7 @@
 name: flutter_selectable_cards
 description: "A new Flutter project."
 version: 0.0.1
-homepage:
+homepage: https://arkone.dev/packages/flutter_selectable_cards
 
 environment:
   sdk: ^3.5.3

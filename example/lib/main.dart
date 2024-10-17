@@ -23,29 +23,30 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Selectable Cards Example'),
         ),
         body: Center(
           child: SelectableCards(
+              isMultipleSelection: true,
+              layout: const LayoutWrap(),
               children: const [
                 SimpleCard(
                   index: 0,
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Text('Card 1'),
+                    child: Text('Select Card 1'),
                   ),
                 ),
                 SimpleCard(
                   index: 1,
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Text('Card 2'),
+                    child: Text('Select Card 2'),
                   ),
                 ),
-                RadioCard(title: "Test", subtitle: "Test", index: 2),
               ],
               onSelected: (index) {
-                print('Selected card: $index');
+                print('Main.dart Selected card: $index');
               }),
         ),
       ),
