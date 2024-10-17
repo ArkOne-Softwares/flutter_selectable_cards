@@ -133,7 +133,7 @@ class MyApp extends StatelessWidget {
 
 ### Selectable Cards Example
 
-![Selectable Cards](https://raw.githubusercontent.com/ArkoneSoftwares/flutter_selectable_cards/main/media/selectable_cards.gif)
+![Selectable Cards](https://raw.githubusercontent.com/Arkone-Softwares/flutter_selectable_cards/main/media/selectable_cards.gif)
 
 ```dart
 class SelectableCardsExample extends StatelessWidget {
@@ -173,7 +173,7 @@ class SelectableCardsExample extends StatelessWidget {
 
 ### Selectable Radio Example
 
-![Selectable Radio](https://raw.githubusercontent.com/ArkoneSoftwares/flutter_selectable_cards/main/media/selectable_radio.gif)
+![Selectable Radio](https://raw.githubusercontent.com/Arkone-Softwares/flutter_selectable_cards/main/media/selectable_radio.gif)
 
 ```dart
 class SelectableRadioExample extends StatelessWidget {
@@ -213,7 +213,7 @@ class SelectableRadioExample extends StatelessWidget {
 
 ### Selectable Card With Image Example
 
-![Selectable Card With Image](https://raw.githubusercontent.com/ArkoneSoftwares/flutter_selectable_cards/main/media/selectable_image_cards.gif)
+![Selectable Card With Image](https://raw.githubusercontent.com/Arkone-Softwares/flutter_selectable_cards/main/media/selectable_image_cards.gif)
 
 ```dart
 class SelectableCardWithImageExample extends StatelessWidget {
@@ -261,7 +261,7 @@ class SelectableCardWithImageExample extends StatelessWidget {
 
 ### Any Widget Example
 
-![Selectable Any Widget](https://raw.githubusercontent.com/ArkoneSoftwares/flutter_selectable_cards/main/media/selectable_any_widget.gif)
+![Selectable Any Widget](https://raw.githubusercontent.com/Arkone-Softwares/flutter_selectable_cards/main/media/selectable_any_widget.gif)
 
 ```dart
 class AnyWidgetExample extends StatelessWidget {
