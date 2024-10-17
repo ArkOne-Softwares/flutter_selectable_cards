@@ -452,9 +452,10 @@ class _MyAppState extends State<MyApp> {
                                 print('Main.dart Selected card: $index');
                               },
                             ),
-                        const SizedBox(height: 20),
-                        const Text(
-                          'Any widget can be used inside SelectableCards and they can be used as MultiSelect or SingleSelect',),
+                            const SizedBox(height: 20),
+                            const Text(
+                              'Any widget can be used inside SelectableCards and they can be used as MultiSelect or SingleSelect',
+                            ),
                           ],
                         ),
                       ),
@@ -574,5 +575,3 @@ class LayoutWrapExample extends StatelessWidget {
     );
   }
 }
-
-
